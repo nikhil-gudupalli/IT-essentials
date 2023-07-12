@@ -1,0 +1,100 @@
+##Create a Database:
+
+create database employee_ng;
+
+##Use database:
+
+use employee_ng;
+
+##Create a Table:
+
+CREATE TABLE Employee_Info (
+    ->     EmployeeID INT(10),
+    ->     EmployeeName VARCHAR(255),
+    ->     EmergencyContactName VARCHAR(255),
+    ->     PhoneNumber INT,
+    ->     Address VARCHAR(255),
+    ->     City VARCHAR(255),
+    ->     Country VARCHAR(255)
+    -> );
+
+##Inserting Data:
+
+INSERT INTO Employee_Info (EmployeeID, EmployeeName, EmergencyContactName, PhoneNumber, Address, City, Country)
+    -> VALUES
+    -> (1, 'John Doe', 'Jane Doe', 1234567890, '123 Main St', 'New York', 'USA'),
+    -> (2, 'Alice Smith', 'Bob Smith', 9876543210, '456 Elm St', 'Los Angeles', 'USA'),
+    -> (3, 'Emily Johnson', 'Michael Johnson', 5555555555, '789 Oak St', 'Chicago', 'USA'),
+    -> (4, 'David Brown', 'Karen Brown', 1111111111, '321 Pine St', 'Houston', 'USA'),
+    -> (5, 'Sarah Wilson', 'Andrew Wilson', 9999999999, '654 Maple St', 'Seattle', 'USA'),
+    -> (6, 'Daniel Lee', 'Jessica Lee', 2222222222, '987 Cedar St', 'San Francisco', 'USA'),
+    -> (7, 'Jennifer Davis', 'Richard Davis', 8888888888, '741 Birch St', 'Boston', 'USA'),
+    -> (8, 'Matthew Anderson', 'Olivia Anderson', 3333333333, '852 Walnut St', 'Miami', 'USA'),
+    -> (9, 'Sophia Taylor', 'William Taylor', 7777777777, '369 Pineapple St', 'Dallas', 'USA'),
+    -> (10, 'Oliver Moore', 'Ava Moore', 4444444444, '963 Cherry St', 'Phoenix', 'USA');
+
+##Retrieve data from a table:
+
+select * from Employee_Info;
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+| EmployeeID | EmployeeName     | EmergencyContactName | PhoneNumber | Address          | City          | Country |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+|          1 | John Doe         | Jane Doe             |  1234567890 | 123 Main St      | New York      | USA     |
+|          2 | Alice Smith      | Bob Smith            |  9876543210 | 456 Elm St       | Los Angeles   | USA     |
+|          3 | Emily Johnson    | Michael Johnson      |  5555555555 | 789 Oak St       | Chicago       | USA     |
+|          4 | David Brown      | Karen Brown          |  1111111111 | 321 Pine St      | Houston       | USA     |
+|          5 | Sarah Wilson     | Andrew Wilson        |  9999999999 | 654 Maple St     | Seattle       | USA     |
+|          6 | Daniel Lee       | Jessica Lee          |  2222222222 | 987 Cedar St     | San Francisco | USA     |
+|          7 | Jennifer Davis   | Richard Davis        |  8888888888 | 741 Birch St     | Boston        | USA     |
+|          8 | Matthew Anderson | Olivia Anderson      |  3333333333 | 852 Walnut St    | Miami         | USA     |
+|          9 | Sophia Taylor    | William Taylor       |  7777777777 | 369 Pineapple St | Dallas        | USA     |
+|         10 | Oliver Moore     | Ava Moore            |  4444444444 | 963 Cherry St    | Phoenix       | USA     |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+
+select * from Employee_Info where City = 'Boston';
++------------+----------------+----------------------+-------------+--------------+--------+---------+
+| EmployeeID | EmployeeName   | EmergencyContactName | PhoneNumber | Address      | City   | Country |
++------------+----------------+----------------------+-------------+--------------+--------+---------+
+|          2 | Alice Smith    | Bob Smith            |  9876543210 | 456 Elm St   | Boston | USA     |
+|          7 | Jennifer Davis | Richard Davis        |  8888888888 | 741 Birch St | Boston | USA     |
++------------+----------------+----------------------+-------------+--------------+--------+---------+
+
+
+##Update data in a table:
+
+update Employee_Info set City = 'Boston' where EmployeeID = 2;
+
+select * from Employee_Info;
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+| EmployeeID | EmployeeName     | EmergencyContactName | PhoneNumber | Address          | City          | Country |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+|          1 | John Doe         | Jane Doe             |  1234567890 | 123 Main St      | New York      | USA     |
+|          2 | Alice Smith      | Bob Smith            |  9876543210 | 456 Elm St       | Boston        | USA     |
+|          3 | Emily Johnson    | Michael Johnson      |  5555555555 | 789 Oak St       | Chicago       | USA     |
+|          4 | David Brown      | Karen Brown          |  1111111111 | 321 Pine St      | Houston       | USA     |
+|          5 | Sarah Wilson     | Andrew Wilson        |  9999999999 | 654 Maple St     | Seattle       | USA     |
+|          6 | Daniel Lee       | Jessica Lee          |  2222222222 | 987 Cedar St     | San Francisco | USA     |
+|          7 | Jennifer Davis   | Richard Davis        |  8888888888 | 741 Birch St     | Boston        | USA     |
+|          8 | Matthew Anderson | Olivia Anderson      |  3333333333 | 852 Walnut St    | Miami         | USA     |
+|          9 | Sophia Taylor    | William Taylor       |  7777777777 | 369 Pineapple St | Dallas        | USA     |
+|         10 | Oliver Moore     | Ava Moore            |  4444444444 | 963 Cherry St    | Phoenix       | USA     |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+
+##Delete data from a table:
+
+delete from Employee_Info where EmployeeID = 4;
+
+select * from Employee_Info;
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+| EmployeeID | EmployeeName     | EmergencyContactName | PhoneNumber | Address          | City          | Country |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
+|          1 | John Doe         | Jane Doe             |  1234567890 | 123 Main St      | New York      | USA     |
+|          2 | Alice Smith      | Bob Smith            |  9876543210 | 456 Elm St       | Boston        | USA     |
+|          3 | Emily Johnson    | Michael Johnson      |  5555555555 | 789 Oak St       | Chicago       | USA     |
+|          5 | Sarah Wilson     | Andrew Wilson        |  9999999999 | 654 Maple St     | Seattle       | USA     |
+|          6 | Daniel Lee       | Jessica Lee          |  2222222222 | 987 Cedar St     | San Francisco | USA     |
+|          7 | Jennifer Davis   | Richard Davis        |  8888888888 | 741 Birch St     | Boston        | USA     |
+|          8 | Matthew Anderson | Olivia Anderson      |  3333333333 | 852 Walnut St    | Miami         | USA     |
+|          9 | Sophia Taylor    | William Taylor       |  7777777777 | 369 Pineapple St | Dallas        | USA     |
+|         10 | Oliver Moore     | Ava Moore            |  4444444444 | 963 Cherry St    | Phoenix       | USA     |
++------------+------------------+----------------------+-------------+------------------+---------------+---------+
