@@ -1,6 +1,6 @@
 # IT-essentials
 Topics covered:
 
-Linux Commands
+- Linux Commands
 
-Version Control
+- Version Control
