@@ -2,4 +2,5 @@
 Topics covered:
 
 Linux Commands
+
 Version Control
