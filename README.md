@@ -3,4 +3,8 @@ Topics covered:
 
 - Linux Commands
 
-- Version Control
+- Version Control (git)
+
+- CI/CD
+
+- JIRA
