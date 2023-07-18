@@ -98,3 +98,48 @@ select * from Employee_Info;
 |          9 | Sophia Taylor    | William Taylor       |  7777777777 | 369 Pineapple St | Dallas        | USA     |
 |         10 | Oliver Moore     | Ava Moore            |  4444444444 | 963 Cherry St    | Phoenix       | USA     |
 +------------+------------------+----------------------+-------------+------------------+---------------+---------+
+
+
+************ LEETCODE PRACTICED QUESTIONS ************
+
+************ SELECT ***********
+
+#1
+select product_id from Products
+where low_fats = 'Y' and recyclable = 'Y'
+
+#2
+select name from Customer
+where referee_id != 2 or referee_id is null
+
+#3
+select name, population, area from World
+where area >= 3000000 or population >= 25000000
+
+#4
+select distinct author_id as id from Views
+where author_id = viewer_id
+order by id asc
+
+#5
+select tweet_id from Tweets
+where length (content) > 15
+
+
+************* Basic Joins **************
+
+#1
+
+
+************* Basic Aggregate Functions **********
+#1
+select * from Cinema
+where id %2 <> 0 and description != "boring"
+order by rating desc
+
+#2
+select p.product_id, ROUND(SUM(p.price * u.units) / sum(u.units), 2) as average_price from Prices p
+join UnitsSold u on p.product_id = u.product_id AND u.purchase_date BETWEEN p.start_date AND p.end_date
+group by p.product_id
+
+#3
