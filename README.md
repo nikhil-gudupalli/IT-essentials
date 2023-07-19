@@ -8,3 +8,5 @@ Topics covered:
 - CI/CD
 
 - JIRA
+
+- Database
