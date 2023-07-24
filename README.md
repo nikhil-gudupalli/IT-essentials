@@ -10,3 +10,5 @@ Topics covered:
 - JIRA
 
 - Database
+
+- Cloud Computing
